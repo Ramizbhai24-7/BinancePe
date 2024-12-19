@@ -5,11 +5,11 @@ import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 
 interface Props {
+    className?: string;
     product: Product;
-    className: string;
-}
+  }
 
-const QuantityButtons = ({ product, className }: Props ) => {
+const QuantityButtons = ({ className }: Props ) => {
     const itemCount = 4;
   return (
     <div className={cn("flex items-center gap-1 text-base pb-1", className)}>

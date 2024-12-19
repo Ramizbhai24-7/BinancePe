@@ -1,11 +1,11 @@
-import { TrolleyIcon } from "@sanity/icons";
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from '@sanity/types';
+import { FaProductHunt } from 'react-icons/fa';  
 
 export const productType = defineType({
   name: "product",
   title: "Product",
   type: "document",
-  icon: TrolleyIcon,
+  icon: FaProductHunt,  // Using an icon component here
   fields: [
     defineField({
       name: "name",
@@ -15,7 +15,7 @@ export const productType = defineType({
     }),
     defineField({
       name: "slug",
-      title: "slug",
+      title: "Slug",
       type: "slug",
       options: {
         source: "name",
@@ -49,7 +49,8 @@ export const productType = defineType({
       name: "discount",
       title: "Discount Percentage",
       type: "number",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().min(0).max(100).error("Discount must be between 0 and 100"),
     }),
     defineField({
       name: "categories",
@@ -61,7 +62,7 @@ export const productType = defineType({
       name: "stock",
       title: "Stock",
       type: "number",
-      validation: (Rule) => Rule.min(0),
+      validation: (Rule) => Rule.min(0).max(1000),  // Optional max stock validation
     }),
     defineField({
       name: "status",
@@ -109,4 +110,3 @@ export const productType = defineType({
     },
   },
 });
- 

@@ -4,7 +4,7 @@ import React from 'react'
 const SingleProductPage = () => {
   return (
     <div>
-        <Container></Container>
+        <Container><h1>SingleProductPage</h1></Container>
     </div>
   )
 }

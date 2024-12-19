@@ -5,7 +5,6 @@ import { Loader2 } from "lucide-react";
 
 const NoProductsAvailable = ({
   selectedTab,
-  className,
 }: {
   selectedTab: string;
   className?: string;

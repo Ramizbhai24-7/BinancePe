@@ -2,13 +2,12 @@ import React from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import PriceFormatter from "./PriceFormatter";
+import { Product } from "@/sanity.types";
 import QuantityButtons from "./QuantityButtons";
 
 interface Props {
   className?: string;
-  product: {
-    stock?: number;
-  };
+  product: Product;
 }
 
 const AddToCartButton = ({ product, className }: Props) => {
